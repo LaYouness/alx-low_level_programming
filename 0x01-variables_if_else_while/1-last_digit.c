@@ -19,7 +19,7 @@ int main(void)
 	{
 	printf("and is greater than 5\n");
 	}
-	else if (ld < 6 && ld != 0);
+	else if (ld < 6 && ld != 0)
 	{
 	printf("and is less than 6 and not 0\n");
 	}
