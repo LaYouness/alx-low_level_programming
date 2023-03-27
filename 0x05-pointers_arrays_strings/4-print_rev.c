@@ -15,7 +15,7 @@ i++;
 }
 while (i >= 0)
 {
-_putchar(s[i - 1]);
+_putchar(s[i - 2]);
 i--;
 }
 _putchar('\n');
