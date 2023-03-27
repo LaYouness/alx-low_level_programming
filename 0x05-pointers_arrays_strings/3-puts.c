@@ -10,6 +10,10 @@ char a;
 while (a != '\0')
 {
 a = str[i];
+if (a == '\0')
+{
+break;
+}
 _putchar(a);
 i++;
 }
