@@ -6,8 +6,8 @@
  */
 void reverse_array(int *a, int n)
 {
-int i;
-char t;
+int i = n - 1, t;
+
 while (i >= n / 2)
 {
 t = a[n - 1 - i];
