@@ -11,6 +11,10 @@ char t;
 
 while (i < n / 2)
 {
+if (n < 2)
+{
+break;
+}
 t = a[i];
 a[i] = a[j];
 a[j] = t;
