@@ -3,7 +3,6 @@
  *factorial - calculate factorial of a num
  *@n: input
  *Return: factorial of n
- *
  */
 int factorial(int n)
 {
@@ -17,7 +16,7 @@ return (-1);
 }
 else
 {
-n = n * factorial(n - 1);
+n = n *factorial(n - 1);
 }
 return (n);
 }
