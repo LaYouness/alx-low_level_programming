@@ -25,4 +25,5 @@ p[i] = c;
 }
 return (p);
 }
+return (NULL);
 }
