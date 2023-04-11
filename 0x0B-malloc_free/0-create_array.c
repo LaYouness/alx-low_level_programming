@@ -18,7 +18,7 @@ return (NULL);
 }
 else
 {
-p = (char*)malloc(sizeof(char) * size);
+p = (char *)malloc((sizeof(char)) * size);
 for (i = 0; i < size; i++)
 {
 p[i] = c;
