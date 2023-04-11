@@ -21,7 +21,7 @@ while (str[i] != '\0')
 {
 i++;
 }
-p = (char *)malloc(sizeof(char) * i);
+p = (char *)malloc(sizeof(char) * (i + 1));
 for (j = 0; j < i; j++)
 {
 p[j] = str[k];
