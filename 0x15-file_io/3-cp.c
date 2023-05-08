@@ -9,18 +9,17 @@
  */
 char *cbuf(char *file)
 {
-        char *buffer;
+char *buffer;
 
-        buffer = malloc(sizeof(char) * 1024);
+buffer = malloc(sizeof(char) * 1024);
 
-        if (buffer == NULL)
-        {
-                dprintf(STDERR_FILENO,
-                        "Error: Can't write to %s\n", file);
-                exit(99);
-        }
+if (buffer == NULL)
+{
+dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file);
+exit(99);
+}
 
-        return (buffer);
+return (buffer);
 }
 /**
  * _close - Closes fd
@@ -28,15 +27,15 @@ char *cbuf(char *file)
  */
 void _close(int fd)
 {
-        int c;
+int c;
 
-        c = close(fd);
+c = close(fd);
 
-        if (c == -1)
-        {
-                dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
-                exit(100);
-        }
+if (c == -1)
+{
+dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
+exit(100);
+}
 }
 /**
  * main - copies the contents of a file to another file.
@@ -58,12 +57,10 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-
 	buffer = cbuf(argv[2]);
 	from = open(argv[1], O_RDONLY);
 	r = read(from, buffer, 1024);
 	to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
-
 	do {
 		if (from == -1 || r == -1)
 		{
@@ -72,7 +69,6 @@ int main(int argc, char *argv[])
 			free(buffer);
 			exit(98);
 		}
-
 		w = write(to, buffer, r);
 		if (to == -1 || w == -1)
 		{
@@ -81,15 +77,11 @@ int main(int argc, char *argv[])
 			free(buffer);
 			exit(99);
 		}
-
 		r = read(from, buffer, 1024);
 		to = open(argv[2], O_WRONLY | O_APPEND);
-
 	} while (r > 0);
-
 	free(buffer);
 	_close(from);
 	_close(to);
-
 	return (0);
 }
