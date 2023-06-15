@@ -1,7 +1,7 @@
 #include "lists.h"
 /**
  * dlistint_len - len of a list
- * dlistint_t: list
+ * @h: head of list
  * Return: len
  */
 size_t dlistint_len(const dlistint_t *h)
@@ -14,7 +14,7 @@ while (travel != NULL)
 {
 if (travel == NULL)
 {
-return(0);
+return (0);
 }
 i++;
 travel = travel->next;
